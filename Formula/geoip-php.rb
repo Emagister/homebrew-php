@@ -3,7 +3,7 @@ require 'formula'
 class GeoipPhp < Formula
   homepage 'http://pecl.php.net/package/geoip'
   url 'http://pecl.php.net/get/geoip-1.0.8.tgz'
-  # md5 '4ad53115ed7d1d452cbe50b45dcecdf2'
+  md5 '65263ac6d1c335f22ce818b3253912a5'
 
   depends_on 'libgeoip'
   depends_on 'autoconf'
@@ -14,16 +14,16 @@ class GeoipPhp < Formula
       system "./configure", "--prefix=#{prefix}", '--with-geoip'
       system "make"
 
-      prefix.install 'modules/igbinary.so'
+      prefix.install 'modules/geoip.so'
     end
   end
 
   def caveats; <<-EOS.undent
-    To finish installing igbinary-php:
+    To finish installing geoip-php:
       * Add the following lines to #{etc}/php.ini:
         [apc]
-        extension="#{prefix}/igbinary.so"
-        igbinary.compact_strings = Off
+        extension="#{prefix}/geoip.so"
+        geoip.custom_directory = /path/to/your/GeoIP.dat/directory
 
       * Restart your webserver.
       * Write a PHP page that calls "phpinfo();"

@@ -7,7 +7,7 @@ class MemcachePhp < Formula
   
   devel do
     url 'http://pecl.php.net/get/memcache-3.0.6.tgz'
-    # md5 '9542f1886b72ffbcb039a5c21796fe8a'
+    md5 '23c2a1548f3fc7658b98b1c60e6d83b1'
   end
 
   depends_on 'autoconf'

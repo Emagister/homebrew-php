@@ -8,14 +8,30 @@ class MemcachedPhp < Formula
 
   depends_on 'autoconf'
   depends_on 'libmemcached'
+  depends_on 'igbinary-php' if ARGV.include? '--with-igbinary-support'
+  
+  def options
+    [
+      ['--with-igbinary-support', 'Include support for serializing through igbinary lib']
+    ]
+  end
 
   def install
     if not ARGV.build_head?
       cd "memcached-#{version}"
     end
 
+    args = [
+      "--prefix=#{prefix}",
+      "--with-libmemcached-dir=#{Formula.factory('libmemcached').prefix}"
+    ]
+    
+    if ARGV.include? '--with-igbinary-support'
+      args << '--enable-memcached-igbinary'
+    end
+
     system "phpize"
-    system "./configure", "--prefix=#{prefix}", "--with-libmemcached-dir=#{Formula.factory('libmemcached').prefix}"
+    system "./configure", *args
     system "make"
     prefix.install 'modules/memcached.so'
   end

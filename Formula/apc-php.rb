@@ -3,10 +3,12 @@ require 'formula'
 class ApcPhp < Formula
   homepage 'http://pecl.php.net/package/apc'
   url 'http://pecl.php.net/get/APC-3.1.9.tgz'
+  md5 'a2cf7fbf6f3a87f190d897a53260ddaa'
   
   devel do
     url 'http://pecl.php.net/get/APC-3.1.10.tgz'
     version '3.1.10'
+    md5 'f4a6b91903d6ba9dce89fc87bb6f26c9'
   end
 
   depends_on 'autoconf'

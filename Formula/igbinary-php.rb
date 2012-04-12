@@ -15,6 +15,10 @@ class IgbinaryPhp < Formula
       system "phpize"
       system "./configure", "--prefix=#{prefix}"
       system "make"
+      
+      # Copy the header file need by memcached-php
+      Dir.mkdir "#{Formula.factory('php').include}/php/ext/igbinary" unless File.exists? "#{Formula.factory('php').include}/php/ext/igbinary"
+      system "cp igbinary.h #{Formula.factory('php').include}/php/ext/igbinary/igbinary.h"
 
       prefix.install 'modules/igbinary.so'
     end

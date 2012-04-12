@@ -3,7 +3,7 @@ require 'formula'
 class XdebugPhp < Formula
   homepage 'http://xdebug.org'
   url 'http://pecl.php.net/get/xdebug-2.2.0RC1.tgz'
-  # md5 '779f4a66acdccd673553769e403674c4'
+  md5 '002b2b60fe7d044526fa5ca00caf5f7b'
   version '2.2.0RC1'
 
   depends_on 'autoconf'

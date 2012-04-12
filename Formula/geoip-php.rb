@@ -21,7 +21,7 @@ class GeoipPhp < Formula
   def caveats; <<-EOS.undent
     To finish installing geoip-php:
       * Add the following lines to #{etc}/php.ini:
-        [apc]
+        [geoip]
         extension="#{prefix}/geoip.so"
         geoip.custom_directory = /path/to/your/GeoIP.dat/directory
 

@@ -23,7 +23,7 @@ class IgbinaryPhp < Formula
   def caveats; <<-EOS.undent
     To finish installing igbinary-php:
       * Add the following lines to #{etc}/php.ini:
-        [apc]
+        [igbinary]
         extension="#{prefix}/igbinary.so"
         igbinary.compact_strings = Off
 

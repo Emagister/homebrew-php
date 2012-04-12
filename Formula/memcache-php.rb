@@ -4,6 +4,11 @@ class MemcachePhp < Formula
   homepage 'http://pecl.php.net/package/memcache'
   url 'http://pecl.php.net/get/memcache-2.2.6.tgz'
   md5 '9542f1886b72ffbcb039a5c21796fe8a'
+  
+  devel do
+    url 'http://pecl.php.net/get/memcache-3.0.6.tgz'
+    # md5 '9542f1886b72ffbcb039a5c21796fe8a'
+  end
 
   depends_on 'autoconf'
 

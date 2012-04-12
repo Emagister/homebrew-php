@@ -1,19 +1,17 @@
 require 'formula'
 
-class IgbinaryPhp < Formula
-  homepage 'http://pecl.php.net/package/igbinary'
-  url 'http://pecl.php.net/get/igbinary-1.1.1.tgz'
-  version '1.1.1'
-  md5 '4ad53115ed7d1d452cbe50b45dcecdf2'
-  
-  head 'https://github.com/phadej/igbinary.git'
+class GeoipPhp < Formula
+  homepage 'http://pecl.php.net/package/geoip'
+  url 'http://pecl.php.net/get/geoip-1.0.8.tgz'
+  # md5 '4ad53115ed7d1d452cbe50b45dcecdf2'
 
+  depends_on 'libgeoip'
   depends_on 'autoconf'
 
   def install
-    Dir.chdir "igbinary-#{version}" do
+    Dir.chdir "geoip-#{version}" do
       system "phpize"
-      system "./configure", "--prefix=#{prefix}"
+      system "./configure", "--prefix=#{prefix}", '--with-geoip'
       system "make"
 
       prefix.install 'modules/igbinary.so'

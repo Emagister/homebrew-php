@@ -2,8 +2,9 @@ require 'formula'
 
 class XdebugPhp < Formula
   homepage 'http://xdebug.org'
-  url 'http://www.xdebug.org/files/xdebug-2.1.3.tgz'
-  md5 '779f4a66acdccd673553769e403674c4'
+  url 'http://pecl.php.net/get/xdebug-2.2.0RC1.tgz'
+  # md5 '779f4a66acdccd673553769e403674c4'
+  version '2.2.0RC1'
 
   depends_on 'autoconf'
 
